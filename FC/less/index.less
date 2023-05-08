@@ -1,0 +1,164 @@
+@import './base';
+@import './normalize';
+
+// 设置变量存储37.5 这个数据
+@rootSize: 37.5rem;
+
+body {
+    background: #F0F0F0;
+
+}
+
+// 主体内容
+.main {
+    padding-bottom: (50 / @rootSize);
+
+    .banner {
+        height: (160 / @rootSize);
+    }
+
+    .title {
+        height: (40 / @rootSize);
+        line-height: (40 / @rootSize);
+
+        padding-left: (15 / @rootSize);
+
+        h4 {
+            font-size: (14 / @rootSize);
+            color: #3C3C3C;
+        }
+    }
+
+    .item {
+        margin-bottom: (10 / @rootSize);
+
+        .pic {
+            height: (160 / @rootSize);
+            position: relative;
+
+            // 收藏图标
+            i {
+                position: absolute;
+                top: (15 / @rootSize);
+                right: (18 / @rootSize);
+
+                font-size: (24 / @rootSize);
+                color: #fff;
+            }
+
+            //活动状态
+            .active {
+                width: (68 / @rootSize);
+                height: (29 / @rootSize);
+                background-image: url(../images/status_active.png);
+                // 背景图缩放(图片给的是二倍图，不对)
+                background-size: contain;
+
+                position: absolute;
+                top: -(4 / @rootSize);
+                left: (15 / @rootSize);
+
+                font-size: (12 / @rootSize);
+                color: #fff;
+                text-align: center;
+                line-height: (25 / @rootSize);
+
+                // 灰色图片样式
+                // .active.off{}  必须是active类同时应用了off类
+                // div.off{}  交集选择器
+
+                &.off {
+                    background-image: url(../images/status_default.png);
+                    // 背景图缩放(图片给的是二倍图，不对)
+                    background-size: contain;
+                }
+
+
+
+            }
+
+
+
+        }
+
+        .txt {
+            background-color: #fff;
+            padding: (10 / @rootSize)(15 / @rootSize);
+
+            .top {
+                display: flex;
+                // 一个最左一个最右
+                justify-content: space-between;
+
+                h5 {
+                    font-size: (15 / @rootSize);
+                    width: (290 / @rootSize);
+                }
+
+                p {
+                    font-size: (15 / @rootSize);
+                    color: #FE6249;
+                }
+            }
+
+            .bottom {
+                display: flex;
+                margin-top: (10 / @rootSize);
+
+                p {
+                    color: #B4B4B4;
+                    padding-right: (15 / @rootSize);
+                    font-size: (11 / @rootSize);
+
+                    // 字体图标有自己的字号，不会继承
+                    i {
+                        font-size: (11 / @rootSize);
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
+}
+
+// 主体内容
+
+//底部工具栏
+footer {
+    height: (50 / @rootSize);
+    background: #FECA49;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    //flex 布局中垂直居中
+    align-items: center;
+    color: #D78B09;
+    text-align: center;
+
+    a {
+        font-size: (11 / @rootSize);
+
+        // i {
+        //     font-size: (30 / @rootSize);//修改不了字体图标大小，选择器权重不够
+        // }
+        // 标签的权重小于类的权重
+        .iconfont {
+            font-size: (24 / @rootSize);
+        }
+
+        // a.current{}
+        &.current {
+            color: #fff;
+        }
+    }
+}
+
+//底部工具栏
